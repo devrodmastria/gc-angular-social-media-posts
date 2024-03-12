@@ -1,0 +1,12 @@
+<div style="border-width: 5px; border-color: darkblue; border-style: dotted dashed solid dotted; width: 50%; padding: 10px; margin-bottom: 10px;">
+    <h4><span style="text-decoration: underline;">{{displayPost.name}} says</span> {{displayPost.message}}</h4>
+    <p>votes: {{displayPost.votes}}
+    <button (click)="emitUpVote()" style="margin-left: 10px;">&#8686;</button>
+    @if(displayPost.votes < -4){ <button (click)="emitDownVote()" style="margin-left: 10px; background-color: pink"><span>DELETE</span></button> }
+    @else {
+        <button (click)="emitDownVote()" style="margin-left: 10px;">&#8681;</button>
+    }
+
+    @if(displayPost.votes < 0){ Keep voting down &#8681; to delete this post! <span style="color: red;">
+        {{ (-minimumVotes) + displayPost.votes}} votes left</span>}</p>
+</div>

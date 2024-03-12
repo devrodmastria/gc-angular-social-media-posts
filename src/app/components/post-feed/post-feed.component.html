@@ -1,0 +1,13 @@
+<h4>Community Posts (ranked by votes)</h4>
+
+@for(post of feedList; track $index){
+    <app-post-item 
+        [displayPost]="post" 
+        [minimumVotes]="minVotes"
+        (downEvent)="downVote($event)"
+        (upEvent)="upVote($event)">
+    </app-post-item>
+}
+
+@if(creatorMode) {<app-new-post-form (createPost)="savePost($event)"></app-new-post-form>} 
+@else {<button (click)="createPost()" [disabled]="creatorMode">Create Post</button>}

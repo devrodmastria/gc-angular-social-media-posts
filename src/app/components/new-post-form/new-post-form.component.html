@@ -1,0 +1,17 @@
+
+<div style="border-width: 5px; border-color: rgb(3, 169, 244); border-style: outset; width: 30%; padding: 10px;">
+
+    <p>Share Your Thougts Below</p>
+
+    <div style="background-color: gainsboro;">
+        <label for="author">Name </label>
+        <input id="author" name="name" type="text" [(ngModel)]="postItem.name" style="margin-top: 10px;">
+        <br>
+        <label for="msg" type="text">Message </label>
+        <input id="msg" type="text" [(ngModel)]="postItem.message"  style="margin-top: 10px;"/>
+        <br>
+        <button (click)="createEmitter()" style="margin-top: 10px;">Save</button>
+    </div>
+
+</div>
+
